@@ -2,8 +2,9 @@
     <!-- Iterate over object_list -->
     {% for object in object_list %}
     <!-- Display Objects -->
-    <li>{{ object.title }}</li>
-    <li>{{ object.description }}</li>
+    <li><a href="{% url 'item_detail' object.id %}">{{ object.title }}</a></li>
+    {{ object.description }}
+    
     <hr/>
     <!-- If objet_list is empty  -->
     {% empty %}
