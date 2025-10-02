@@ -1,6 +1,10 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+{% block content %}
+{% for data in item_model %}
 <div>
-    {% for data in item_model %}
-    {{ data.title }} -> {{ data.description }}<br/>
-    <hr/>
-    {% endfor %}
+    <h2><a href="{% url 'item_detail' data.id %}">{{ data.title }}</a></h2>
+    <p>{{ data.description }}</p>
 </div>
+{% endfor %}
+{% endblock content %}

@@ -7,8 +7,12 @@ from django.urls import reverse
 
 from .models import CartModel
 
+
+def center_view(request):
+    return render(request, 'layout/center-area.html')
+
 def home_view(request):
-    return render(request, 'home.html')
+    raise Exception("This is a custom server error!")
 
 def about_view(request):
     return render(request, 'about.html')
