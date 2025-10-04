@@ -4,15 +4,23 @@ import datetime
 from django.views.generic.list import ListView
 from django.shortcuts import redirect
 from django.urls import reverse
-
+from django.template import loader
 from .models import CartModel
 
+
+def dtl_view(request):
+  template = loader.get_template('dtl_view.html')
+  context = {
+    'today':  datetime.datetime.now().date(),
+    'lst': []
+  }
+  return HttpResponse(template.render(context, request))
 
 def center_view(request):
     return render(request, 'layout/center-area.html')
 
 def home_view(request):
-    raise Exception("This is a custom server error!")
+    return render(request, 'home.html')
 
 def about_view(request):
     return render(request, 'about.html')

@@ -11,4 +11,5 @@ urlpatterns = [
     path('item/<int:item_id>/', views.item_detail, name='item_detail'),
     path('create/', views.item_create, name='create'),
     path('center/', views.center_view, name='center'),
+    path('dtl/', views.dtl_view, name='center')
 ] 

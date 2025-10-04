@@ -1,0 +1,32 @@
+<html>
+   <body>
+    {% with name="Guest, this is Django!" %}
+    Hello {{ name}}!<p>Today is {{today}}</p>
+    
+    {% if today.day == 2 %}
+      
+    This is second day of month.
+    
+    {% elif today.day == 30 %}
+    
+    This is last day of month.
+    
+	{% else %}
+
+    Not sure about the day.
+
+    {%endif%}
+    
+    {% endwith %}
+
+    
+    <ul>
+      {% for obj in lst %}
+      <li>{{ obj }}</li>
+      {% empty %}
+     <li>Sorry, {# no item found. #}</li>
+      {% endfor %}
+   </ul>
+
+   </body>
+</html>
