@@ -1,14 +1,19 @@
+{% load static %}
 <html>
 <head>
     <title>My Cart App</title>
 </head>
 <body>
     <header>
+        <img src = "{% static 'django.png' %}" height="100" width="100">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script src="{% static 'cart.js' %}"></script>
         <h1><a href="{% url 'home' %}">Cart items</a></h1>
     </header>
     <div>
         {% block content %}
         {% endblock content %}
     </div>
+    <div><button onclick="test()">Verify JS</button></div>
 </body>
 </html>
